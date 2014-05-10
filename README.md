@@ -8,10 +8,6 @@ Using PyPI
 
     pip install django-editos
 
-From source
-
-   python setup.py install
-
 ## Basic usage
 
 In settings.py
