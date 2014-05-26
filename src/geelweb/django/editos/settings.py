@@ -6,3 +6,5 @@ EDITOS_THEMES = getattr(settings, 'EDITOS_THEMES', (
 ))
 
 EDITOS_DEFAULT_THEME = getattr(settings, 'EDITOS_DEFAULT_THEME', 'light')
+
+EDITOS_HELP_TEXTS = getattr(settings, 'EDITOS_HELP_TEXTS', {})

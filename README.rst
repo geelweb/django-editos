@@ -121,6 +121,16 @@ Default: "light"
 
 The default theme to use
 
+**EDITOS_HELP_TEXTS**
+
+Default: {}
+
+This sets the mapping of help text to model field. Example::
+
+    EDITOS_HELP_TEXTS = {
+        'image': '150 x 300px',
+    }
+
 License
 =======
 
