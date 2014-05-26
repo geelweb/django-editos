@@ -41,6 +41,10 @@ Required. 100 characters or fewer.
 
 Required. Url to redirect
 
+**button_label**
+
+Optional. 20 characters or fewer.
+
 **image**
 
 Required. Uploaded image.

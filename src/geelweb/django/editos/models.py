@@ -7,6 +7,8 @@ class Edito(models.Model):
     )
     title = models.CharField(max_length=100)
     link = models.URLField()
+    button_label = models.CharField(max_length=20, default="Go !",
+            Required=False)
     image = models.FileField(upload_to="editos")
     text_content = models.CharField(max_length=400)
     display_from = models.DateField()
