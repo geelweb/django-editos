@@ -14,5 +14,8 @@ class Edito(models.Model):
     text_theme = models.CharField(max_length=10, choices=settings.EDITOS_THEMES,
             default=settings.EDITOS_DEFAULT_THEME)
 
+    date_created = models.DateTimeField(auto_now_add=True)
+    date_updated = models.DateTimeField(auto_now=True)
+
     def __unicode__(self):
         return self.title
