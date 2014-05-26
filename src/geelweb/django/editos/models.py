@@ -1,10 +1,7 @@
 from django.db import models
+from geelweb.django.editos import settings
 
 class Edito(models.Model):
-    TEXT_THEME_CHOICES = (
-        ('light', 'Light'),
-        ('dark', 'Dark'),
-    )
     title = models.CharField(max_length=100)
     link = models.URLField()
     button_label = models.CharField(max_length=20, default="Go !",
@@ -14,8 +11,8 @@ class Edito(models.Model):
     display_from = models.DateField()
     display_until = models.DateField()
     active = models.BooleanField(default=True)
-    text_theme = models.CharField(max_length=10, choices=TEXT_THEME_CHOICES,
-            default='light', help_text="light if the image is dark, dark if the image is light")
+    text_theme = models.CharField(max_length=10, choices=settings.EDITOS_THEMES,
+            default=settings.EDITOS_DEFAULT_THEME)
 
     def __unicode__(self):
         return self.title

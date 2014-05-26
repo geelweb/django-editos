@@ -67,7 +67,7 @@ Optional. Default to True. Define if the item is active.
 
 **text_theme**
 
-Required. A theme to apply to the item in the template rendering. Can be "light" or "dark".
+Required. A theme to apply to the item in the template rendering. Can be "light" or "dark". text_theme field use EDITOS_THEMES_ and EDITOS_DEFAULT_THEME_ settings.
 
 Template tags
 =============
@@ -96,6 +96,30 @@ The editos will be assign to the template in the ``editos`` variable. Example::
     {% for edito in editos %}
       {{ edito.title }}
     {% endfor %}
+
+Settings
+========
+
+.. _EDITOS_THEMES:
+
+**EDITOS_THEMES**
+
+Default::
+
+    (
+    ('light', 'Light'),
+    ('dark', 'Dark'),
+    )
+
+A tuple of (value, label) choices
+
+.. _EDITOS_DEFAULT_THEME:
+
+**EDITOS_DEFAULT_THEME**
+
+Default: "light"
+
+The default theme to use
 
 License
 =======
