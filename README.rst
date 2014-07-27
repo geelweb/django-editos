@@ -15,6 +15,13 @@ From source::
 
     python setup.py install
 
+Testing
+=======
+
+Runing unit tests::
+
+    python setup.py test
+
 Configuring
 ===========
 
