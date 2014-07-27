@@ -41,5 +41,6 @@ if __name__ == "__main__":
                 ],
         },
         keywords = ['django', 'editos', 'carousel'],
+        test_suite = 'geelweb.django.editos.runtests.runtests',
     )
 
