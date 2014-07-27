@@ -37,3 +37,11 @@ class EditoTagTest(TestCase):
         rendered = self.TEMPLATE.render(Context({}))
         self.assertIn('carousel-editos', rendered)
 
+class EditoTest(TestCase):
+    def test_unicode(self):
+        edito = Edito.objects.create(
+                display_from=datetime.date.today(),
+                display_until=datetime.date.today() + datetime.timedelta(days=1),
+                title='Foo !',
+                image=File(open('image.svg')))
+        self.assertEqual(str(edito), 'Foo !')
