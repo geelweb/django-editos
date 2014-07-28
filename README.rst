@@ -18,6 +18,12 @@ From source::
 Testing
 =======
 
+Preparing test env::
+
+    virtualenv ./virtualenv
+    source virtualenv/bin/activate
+    pip install django
+
 Runing unit tests::
 
     python setup.py test
