@@ -48,9 +48,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-#ROOT_URLCONF = 'sandbox.urls'
+# ROOT_URLCONF = 'sandbox.urls'
 
-#WSGI_APPLICATION = 'sandbox.wsgi.application'
+# WSGI_APPLICATION = 'sandbox.wsgi.application'
 
 
 # Database
@@ -75,4 +75,3 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
-

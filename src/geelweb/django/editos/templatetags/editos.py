@@ -5,6 +5,7 @@ from geelweb.django.editos.models import Edito
 
 register = template.Library()
 
+
 class EditoNode(template.Node):
     DEFAULT_TEMPLATE = 'editos/carousel.html'
 
@@ -16,9 +17,10 @@ class EditoNode(template.Node):
 
     def render(self, context):
         editos = Edito.objects.filter(active=1, display_from__lte=datetime.now(),
-            display_until__gte=datetime.now())
+                                      display_until__gte=datetime.now())
         t = template.loader.get_template(self.template)
         return t.render(template.Context({'editos': editos}, autoescape=context.autoescape))
+
 
 @register.tag
 def editos(parser, token):
@@ -39,7 +41,7 @@ def editos(parser, token):
                       "['path/to/template.html']" %
                       dict(tag_name=bits[0]))
 
-    if len(bits) >=1 and len(bits) <= 2:
+    if len(bits) >= 1 and len(bits) <= 2:
         if len(bits) > 1:
             template_file = bits[1]
         else:
@@ -47,4 +49,3 @@ def editos(parser, token):
         return EditoNode(template_file=template_file)
     else:
         raise template.TemplateSyntaxError(syntax_message)
-
