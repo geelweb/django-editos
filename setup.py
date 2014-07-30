@@ -9,7 +9,7 @@ django editos setup script
 """
 
 __author__ = "Guillaume Luchet <guillaume@geelweb.org>"
-__version__ = "1.1"
+__version__ = "1.2"
 
 import os, sys
 from setuptools import setup, find_packages
@@ -30,7 +30,7 @@ if __name__ == "__main__":
         maintainer=maintainer,
         maintainer_email=maintainer_email,
         url="https://github.com/geelweb/django-editos",
-        download_url="https://github.com/geelweb/django-editos/tarball/1.0",
+        download_url="https://github.com/geelweb/django-editos/tarball/%s" % __version__,
         license='MIT',
         namespace_packages = ['geelweb', 'geelweb.django'],
         packages=find_packages('src'),
