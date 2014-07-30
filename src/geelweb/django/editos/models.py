@@ -5,13 +5,14 @@ from geelweb.django.editos import settings
 class Edito(models.Model):
     title = models.CharField(max_length=100,
                              help_text=settings.EDITOS_HELP_TEXTS.get('title'))
-    link = models.URLField(help_text=settings.EDITOS_HELP_TEXTS.get('link'))
+    link = models.URLField(help_text=settings.EDITOS_HELP_TEXTS.get('link'),
+                           blank=True)
     button_label = models.CharField(max_length=20, default="Go !",
                                     blank=True,
                                     help_text=settings.EDITOS_HELP_TEXTS.get('button_label'))
     image = models.FileField(upload_to="editos",
                              help_text=settings.EDITOS_HELP_TEXTS.get('image'))
-    text_content = models.CharField(max_length=400,
+    text_content = models.CharField(max_length=400, blank=True,
                                     help_text=settings.EDITOS_HELP_TEXTS.get('text_content'))
     display_from = models.DateField(help_text=settings.EDITOS_HELP_TEXTS.get('display_from'))
     display_until = models.DateField(help_text=settings.EDITOS_HELP_TEXTS.get('display_until'))
