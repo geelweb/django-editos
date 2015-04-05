@@ -24,7 +24,7 @@ class EditoTagTest(TestCase):
                              display_until=datetime.date.today() - datetime.timedelta(days=1),
                              image=File(open('image.svg')))
         rendered = self.TEMPLATE.render(Context({}))
-        self.assertIn(u'\n', rendered)
+        self.assertIn('\n', rendered)
 
     def test_many_editos(self):
         for n in range(3):
