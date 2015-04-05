@@ -10,7 +10,7 @@ class EditoTagTest(TestCase):
 
     def test_no_editos(self):
         rendered = self.TEMPLATE.render(Context({}))
-        self.assertEqual(u'\n', rendered)
+        self.assertEqual('\n', rendered)
 
     def test_no_active_editos(self):
         Edito.objects.create(display_from=datetime.date.today(),
