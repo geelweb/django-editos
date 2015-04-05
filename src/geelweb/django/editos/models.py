@@ -1,7 +1,9 @@
 from django.db import models
+from django.utils.encoding import python_2_unicode_compatible
+
 from geelweb.django.editos import settings
 
-
+@python_2_unicode_compatible
 class Edito(models.Model):
     title = models.CharField(max_length=100,
                              help_text=settings.EDITOS_HELP_TEXTS.get('title'))
@@ -24,5 +26,5 @@ class Edito(models.Model):
     date_created = models.DateTimeField(auto_now_add=True)
     date_updated = models.DateTimeField(auto_now=True)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
