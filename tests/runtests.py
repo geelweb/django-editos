@@ -1,17 +1,19 @@
 import os
 import sys
 
+DIRNAME = os.path.join(os.path.dirname(__file__), '..')
 
-os.environ['DJANGO_SETTINGS_MODULE'] = 'test_settings'
-test_dir = os.path.dirname(__file__)
-sys.path.insert(0, test_dir)
+sys.path.append(DIRNAME)
+sys.path.append(os.path.join(DIRNAME, 'src'))
+
+os.environ['DJANGO_SETTINGS_MODULE'] = 'tests.test_settings'
 
 import django
 from django.test.utils import get_runner
 from django.conf import settings
 
 
-def runtests():
+if __name__ == "__main__":
     if django.VERSION[0] == 1 and django.VERSION[1] < 7:
         from django.test.utils import setup_test_environment
         setup_test_environment()
