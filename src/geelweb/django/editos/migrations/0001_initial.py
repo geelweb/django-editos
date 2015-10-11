@@ -1,46 +1,30 @@
 # -*- coding: utf-8 -*-
-from south.utils import datetime_utils as datetime
-from south.db import db
-from south.v2 import SchemaMigration
-from django.db import models
+from __future__ import unicode_literals
+
+from django.db import migrations, models
 
 
-class Migration(SchemaMigration):
+class Migration(migrations.Migration):
 
-    def forwards(self, orm):
-        # Adding model 'Edito'
-        db.create_table('editos_edito', (
-            ('id', self.gf('django.db.models.fields.AutoField')(primary_key=True)),
-            ('title', self.gf('django.db.models.fields.CharField')(max_length=100)),
-            ('link', self.gf('django.db.models.fields.URLField')(max_length=200)),
-            ('image', self.gf('django.db.models.fields.files.FileField')(max_length=100)),
-            ('text_content', self.gf('django.db.models.fields.CharField')(max_length=400)),
-            ('display_from', self.gf('django.db.models.fields.DateField')()),
-            ('display_until', self.gf('django.db.models.fields.DateField')()),
-            ('active', self.gf('django.db.models.fields.BooleanField')(default=True)),
-            ('text_theme', self.gf('django.db.models.fields.CharField')(default='light', max_length=10)),
-        ))
-        db.send_create_signal('editos', ['Edito'])
+    dependencies = [
+    ]
 
-
-    def backwards(self, orm):
-        # Deleting model 'Edito'
-        db.delete_table('editos_edito')
-
-
-    models = {
-        'editos.edito': {
-            'Meta': {'object_name': 'Edito'},
-            'active': ('django.db.models.fields.BooleanField', [], {'default': 'True'}),
-            'display_from': ('django.db.models.fields.DateField', [], {}),
-            'display_until': ('django.db.models.fields.DateField', [], {}),
-            'id': ('django.db.models.fields.AutoField', [], {'primary_key': 'True'}),
-            'image': ('django.db.models.fields.files.FileField', [], {'max_length': '100'}),
-            'link': ('django.db.models.fields.URLField', [], {'max_length': '200'}),
-            'text_content': ('django.db.models.fields.CharField', [], {'max_length': '400'}),
-            'text_theme': ('django.db.models.fields.CharField', [], {'default': "'light'", 'max_length': '10'}),
-            'title': ('django.db.models.fields.CharField', [], {'max_length': '100'})
-        }
-    }
-
-    complete_apps = ['editos']
+    operations = [
+        migrations.CreateModel(
+            name='Edito',
+            fields=[
+                ('id', models.AutoField(verbose_name='ID', serialize=False, auto_created=True, primary_key=True)),
+                ('title', models.CharField(help_text=None, max_length=100)),
+                ('link', models.URLField(help_text=None, blank=True)),
+                ('button_label', models.CharField(default=b'Go !', help_text=None, max_length=20, blank=True)),
+                ('image', models.FileField(help_text=None, upload_to=b'editos')),
+                ('text_content', models.CharField(help_text=None, max_length=400, blank=True)),
+                ('display_from', models.DateField(help_text=None)),
+                ('display_until', models.DateField(help_text=None)),
+                ('active', models.BooleanField(default=True, help_text=None)),
+                ('text_theme', models.CharField(default=b'light', help_text=None, max_length=10, blank=True, choices=[(b'light', b'Light'), (b'dark', b'Dark')])),
+                ('date_created', models.DateTimeField(auto_now_add=True)),
+                ('date_updated', models.DateTimeField(auto_now=True)),
+            ],
+        ),
+    ]
