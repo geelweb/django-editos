@@ -9,7 +9,7 @@ django editos setup script
 """
 
 __author__ = "Guillaume Luchet <guillaume@geelweb.org>"
-__version__ = "1.3"
+__version__ = "1.4"
 
 import os, sys
 from setuptools import setup, find_packages
