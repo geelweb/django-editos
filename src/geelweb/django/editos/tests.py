@@ -8,6 +8,10 @@ import datetime
 class EditoTagTest(TestCase):
     TEMPLATE = Template("{% load editos %}{% editos %}")
 
+    def test_template_parameter(self):
+        rendered = Template("{% load editos %}{% editos editos/carousel.html %}").render(Context({}))
+        self.assertEqual('\n', rendered)
+
     def test_no_editos(self):
         rendered = self.TEMPLATE.render(Context({}))
         self.assertEqual('\n', rendered)

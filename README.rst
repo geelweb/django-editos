@@ -89,7 +89,7 @@ Template tags
 
 Render the editos. Example::
 
-    {% editos 'path/to/a/template.html' %}
+    {% editos path/to/a/template.html %}
 
 The first argument is the path to a template to use to render the editos. If
 omited the default ``editos/carousel.html`` template is used.

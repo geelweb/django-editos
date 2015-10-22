@@ -29,16 +29,16 @@ def editos(parser, token):
 
     Syntax::
 
-      {% editos ['template/file.html'] %}
+      {% editos [template/file.html] %}
 
     Exemple usage::
 
       {% editos %}
-      {% editos 'editos/carousel.html' %}
+      {% editos editos/carousel.html %}
     """
     bits = token.split_contents()
     syntax_message = ("%(tag_name)s expects a syntax of %(tag_name)s "
-                      "['path/to/template.html']" %
+                      "[path/to/template.html]" %
                       dict(tag_name=bits[0]))
 
     if len(bits) >= 1 and len(bits) <= 2:
