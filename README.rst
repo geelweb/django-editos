@@ -7,6 +7,11 @@ Django app to manage and display editos
 Requires
 ========
 
+1.5
+---
+
+ - Django >= 1.8
+
 <= 1.4.1
 ------
 
