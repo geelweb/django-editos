@@ -4,6 +4,14 @@ django-editos
 
 Django app to manage and display editos
 
+Requires
+========
+
+<= 1.4.1
+------
+
+ - Django >= 1.6 <= 1.8
+
 Install
 =======
 

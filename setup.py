@@ -9,7 +9,7 @@ django editos setup script
 """
 
 __author__ = "Guillaume Luchet <guillaume@geelweb.org>"
-__version__ = "1.4"
+__version__ = "1.4.1"
 
 import os, sys
 from setuptools import setup, find_packages
@@ -40,6 +40,10 @@ if __name__ == "__main__":
                 'templates/editos/*.html',
                 ],
         },
+        install_requires = [
+            'django>=1.6,<=1.8',
+        ],
         keywords = ['django', 'editos', 'carousel'],
+        test_suite='tests.runtests',
     )
 
