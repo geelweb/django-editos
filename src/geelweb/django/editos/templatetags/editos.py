@@ -19,7 +19,7 @@ class EditoNode(template.Node):
         editos = Edito.objects.filter(active=1, display_from__lte=datetime.now(),
                                       display_until__gte=datetime.now())
         t = template.loader.get_template(self.template)
-        return t.render(template.Context({'editos': editos}, autoescape=context.autoescape))
+        return t.render({'editos': editos})
 
 
 @register.tag
