@@ -1,63 +1,71 @@
-=============
 django-editos
 =============
+
+|Build status|
 
 Django app to manage and display editos
 
 Requires
-========
+--------
 
 1.5
----
+^^^
 
  - Django >= 1.8
 
 <= 1.4.1
-------
+^^^^^^^^
 
  - Django >= 1.6 <= 1.8
 
 Install
-=======
+-------
 
-Using PyPI::
+Using PyPI
+
+.. code-block:: text
 
     pip install django-editos
 
-From source::
+From source
+
+.. code-block:: text
 
     python setup.py install
 
 Testing
-=======
+-------
 
-Preparing test env::
+Preparing test env
+
+.. code-block:: text
 
     virtualenv ./virtualenv
     source virtualenv/bin/activate
-    pip install django
+    pip install django>=1.8
 
-Runing unit tests::
+Runing unit tests
+
+.. code-block:: text
 
     python setup.py test
 
 Configuring
-===========
+-----------
 
 Add ``geelweb.django.editos`` to ``INSTALLED_APPS`` in your settings.
 
-Create the db with ``python manage.py syncdb`` or ``python manage.py migrate editos``
-if you are using `south <http://south.aeracode.org/>`_
+Create the db with ``python manage.py migrate editos``
 
 Load the editos tags in your templates with ``{% load editos %}``
 
 Edito model
-===========
+-----------
 
 Fields
-------
+^^^^^^
 
-editos.models.Edito object have the following fields
+``editos.models.Edito`` object have the following fields
 
 **title**
 
@@ -96,11 +104,13 @@ Optional. Default to True. Define if the item is active.
 Required. A theme to apply to the item in the template rendering. Can be "light" or "dark". text_theme field use EDITOS_THEMES_ and EDITOS_DEFAULT_THEME_ settings.
 
 Template tags
-=============
+-------------
 
 **editos**
 
-Render the editos. Example::
+Render the editos. Example
+
+.. code-block:: text
 
     {% editos path/to/a/template.html %}
 
@@ -108,29 +118,33 @@ The first argument is the path to a template to use to render the editos. If
 omited the default ``editos/carousel.html`` template is used.
 
 Templates
-=========
+---------
 
 **editos/carousel.html**
 
 The default template. Render a `Bootstrap 3 Carousel <http://getbootstrap.com/javascript/#carousel>`_
 
 Write custom templates
-======================
+----------------------
 
-The editos will be assign to the template in the ``editos`` variable. Example::
+The editos will be assign to the template in the ``editos`` variable. Example
+
+.. code-block:: text
 
     {% for edito in editos %}
       {{ edito.title }}
     {% endfor %}
 
 Settings
-========
+--------
 
 .. _EDITOS_THEMES:
 
 **EDITOS_THEMES**
 
-Default::
+Default
+
+.. code-block:: text
 
     (
     ('light', 'Light'),
@@ -151,14 +165,17 @@ The default theme to use
 
 Default: {}
 
-This sets the mapping of help text to model field. Example::
+This sets the mapping of help text to model field. Example
+
+.. code-block:: text
 
     EDITOS_HELP_TEXTS = {
         'image': '150 x 300px',
     }
 
 License
-=======
+-------
 
 django-editos is released under MIT License. See LICENSE.txt file for details.
 
+.. |Build status| image:: https://travis-ci.org/geelweb/django-editos.svg?branch=master
